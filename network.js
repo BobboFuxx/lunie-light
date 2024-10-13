@@ -1,38 +1,38 @@
 export default {
-  id: 'cosmos-hub-testnet', // DEPRECATE, only used for Lunie extension, NOT CHAIN ID
-  name: 'Cosmos Stargate',
+  id: 'prysm-devnet-1', // DEPRECATE, only used for Lunie extension, NOT CHAIN ID
+  name: 'Prysm Hub',
   description:
-    'Cosmos is a network of independent parallel blockchains, powered by BFT consensus algorithms like Tendermint.',
+    'Prysm is an Interchain Security Hub.',
   logo: `logo.svg`,
-  website: 'https://cosmos.network',
-  apiURL: 'http://localhost:8010/proxy', // use `npx lcp --proxyUrl http://34.123.30.100:1317`
-  rpcURL: 'ws://34.123.30.100:26657',
-  stakingDenom: 'MUON',
+  website: 'https://prysm.network',
+  apiURL: 'https://prysm-testnet-api.polkachu.com', // use `npx lcp --proxyUrl http://https://prysm-testnet-api.polkachu.com:1317`
+  rpcURL: 'https://prysm-testnet-rpc.polkachu.com',
+  stakingDenom: 'uprysm',
   coinLookup: [
     {
-      viewDenom: 'MUON',
-      chainDenom: 'umuon',
+      viewDenom: 'PRYSM',
+      chainDenom: 'uprysm',
       chainToViewConversionFactor: 1e-6,
-      icon: `currencies/muon.png`,
+      icon: `currencies/prysm.png`,
     },
   ],
-  addressPrefix: 'cosmos',
-  validatorAddressPrefix: 'cosmosvaloper',
-  validatorConsensusaddressPrefix: 'cosmosvalcons', // needed to map validators from staking queries to the validator set
+  addressPrefix: 'prysm',
+  validatorAddressPrefix: 'prysmvaloper',
+  validatorConsensusaddressPrefix: 'prysmvalcons', // needed to map validators from staking queries to the validator set
   HDPath: `m/44'/118'/0'/0/0`,
-  lockUpPeriod: `3 days`,
+  lockUpPeriod: `21 days`,
   fees: {
     default: {
       gasEstimate: 350000,
       feeOptions: [
         {
-          denom: 'MUON',
+          denom: 'PRYSM',
           amount: 0.001,
         },
       ],
     },
   },
-  icon: `https://lunie.fra1.digitaloceanspaces.com/network-icons/cosmos.png`,
+  icon: ``,
 
   // This is only to be used as a developer tool and for testing purposes
   // NEVER ENABLE LOCALSIGNING IN PRODUCTION OR FOR MAINNETS
